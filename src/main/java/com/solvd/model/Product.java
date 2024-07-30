@@ -1,9 +1,6 @@
 package com.solvd.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -12,7 +9,9 @@ import java.util.List;
 @Setter
 @Builder
 @AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Product {
+    @EqualsAndHashCode.Include
     private String name;
     private BigDecimal price;
     private Short rating;

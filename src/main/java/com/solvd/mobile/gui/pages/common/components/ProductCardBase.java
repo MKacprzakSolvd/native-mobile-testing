@@ -7,11 +7,11 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class ProductCardBase extends AbstractUIObject {
 
-    protected ProductCardBase(WebDriver driver) {
+    public ProductCardBase(WebDriver driver) {
         super(driver);
     }
 
-    protected ProductCardBase(WebDriver driver, SearchContext searchContext) {
+    public ProductCardBase(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 

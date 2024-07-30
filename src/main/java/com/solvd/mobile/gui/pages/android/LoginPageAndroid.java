@@ -27,11 +27,16 @@ public class LoginPageAndroid extends LoginPageBase {
         usernameField.type(user.getUsername());
         passwordField.type(user.getPassword());
         loginButton.click();
-        return null;
+        return initPage(getDriver(), CatalogPageBase.class);
     }
 
     @Override
     public LoginPageBase logInWithInvalidCredentials(User user) {
-        return null;
+        return initPage(getDriver(), LoginPageBase.class);
+    }
+
+    @Override
+    public boolean isPageOpened(long timeoutSeconds) {
+        return loginButton.isVisible(timeoutSeconds);
     }
 }

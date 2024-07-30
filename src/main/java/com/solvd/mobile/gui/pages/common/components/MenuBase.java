@@ -6,11 +6,11 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 
 public abstract class MenuBase extends AbstractUIObject {
-    protected MenuBase(WebDriver driver) {
+    public MenuBase(WebDriver driver) {
         super(driver);
     }
 
-    protected MenuBase(WebDriver driver, SearchContext searchContext) {
+    public MenuBase(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 
