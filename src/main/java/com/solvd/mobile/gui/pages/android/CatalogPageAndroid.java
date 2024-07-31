@@ -101,27 +101,12 @@ public class CatalogPageAndroid extends CatalogPageBase implements IAndroidUtils
 
     // TODO move to sth like MyAndroidUtils
     public void scrollToTop() {
-//        System.out.println(productCardsScrollView.getAttribute("id"));
-        String cardsScrollViewUiSelector = "new UiSelector().description(test-PRODUCTS)";
-
+        String cardsScrollViewUiSelector = "new UiSelector().description(\"test-PRODUCTS\")";
         int maxFlings = 20;
-
-//        WebElement el = getDriver().findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).flingToEnd(10)"));
-
-
         By scrollBy = AppiumBy.androidUIAutomator(
-                "new UiScrollable(" + cardsScrollViewUiSelector
-                        + ").flingToEnd(" + maxFlings + ")");
-        try {
-            WebElement ele = getDriver().findElement(scrollBy);
-            ele.click();
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            // ignore, no element will be found by this selector
-            System.out.println("FAILED TO FIND SCROLLABLE");
-        }
-//        AppiumBy.androidUIAutomator(
-//                "new UiScrollable(" + cardsScrollViewUiSelector + ")"
-//                        + ".flingToBeginning(" + maxSwipes + ")");
+                "new UiScrollable(" + cardsScrollViewUiSelector + ")"
+                        + ".flingToEnd(" + maxFlings + ")");
+        WebElement ele = getDriver().findElement(scrollBy);
     }
 
     @Override
