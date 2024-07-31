@@ -1,9 +1,12 @@
 package com.solvd.carina;
 
-import com.solvd.mobile.gui.pages.android.CatalogPageAndroid;
 import com.solvd.mobile.gui.pages.common.CatalogPageBase;
 import com.solvd.mobile.gui.pages.common.LoginPageBase;
+import com.solvd.mobile.gui.pages.common.ProductDetailsPageBase;
+import com.solvd.mobile.gui.pages.common.components.ProductCardBase;
+import com.solvd.model.Product;
 import com.solvd.model.User;
+import com.solvd.utils.RandomPicker;
 import com.zebrunner.carina.core.AbstractTest;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
@@ -62,19 +65,13 @@ public class MobileTest extends AbstractTest {
         CatalogPageBase catalogPage = loginPageBase.logInWithValidCredentials(user);
         catalogPage.assertPageOpened();
 
-        // TMP:
-//        List<Product> allProducts = catalogPage.getProducts();
-//        allProducts.forEach(System.out::println);
-        ((CatalogPageAndroid) catalogPage).scrollToTop();
-
         log.info("Starting step 2");
-//        Product selectedProduct = allProducts.getFirst();
-//        Product selectedProduct = RandomPicker.getRandomElement(catalogPage.getProductAvailableQuickly());
-//        ProductDetailsPageBase productDetailsPage = catalogPage
-//                .actOnProductCardWithResult(
-//                        selectedProduct,
-//                        ProductCardBase::goToProductDetailsPage
-//                );
+        Product selectedProduct = RandomPicker.getRandomElement(catalogPage.getProductAvailableQuickly());
+        ProductDetailsPageBase productDetailsPage = catalogPage
+                .actOnProductCardWithResult(
+                        selectedProduct,
+                        ProductCardBase::goToProductDetailsPage
+                );
 
         log.info("Starting step 3");
     }

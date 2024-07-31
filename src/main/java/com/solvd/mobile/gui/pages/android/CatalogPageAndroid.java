@@ -100,7 +100,7 @@ public class CatalogPageAndroid extends CatalogPageBase implements IAndroidUtils
     }
 
     // TODO move to sth like MyAndroidUtils
-    public void scrollToTop() {
+    protected void scrollToTop() {
         String cardsScrollViewUiSelector = "new UiSelector().description(\"test-PRODUCTS\")";
         int maxFlings = 20;
         By scrollBy = AppiumBy.androidUIAutomator(
