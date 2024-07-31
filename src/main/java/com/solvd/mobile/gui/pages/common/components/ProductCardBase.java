@@ -1,5 +1,6 @@
 package com.solvd.mobile.gui.pages.common.components;
 
+import com.solvd.mobile.gui.pages.common.ProductDetailsPageBase;
 import com.solvd.model.Product;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -16,7 +17,7 @@ public abstract class ProductCardBase extends AbstractUIObject {
     }
 
     // TODO: change return type
-    public abstract void goToProductDetailsPage();
+    public abstract ProductDetailsPageBase goToProductDetailsPage();
 
     public abstract void review(short rating);
 

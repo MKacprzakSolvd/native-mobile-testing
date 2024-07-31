@@ -1,5 +1,6 @@
 package com.solvd.mobile.gui.pages.android.components;
 
+import com.solvd.mobile.gui.pages.common.ProductDetailsPageBase;
 import com.solvd.mobile.gui.pages.common.components.ProductCardBase;
 import com.solvd.model.Product;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
@@ -27,8 +28,8 @@ public class ProductCardAndroid extends ProductCardBase {
     }
 
     @Override
-    public void goToProductDetailsPage() {
-
+    public ProductDetailsPageBase goToProductDetailsPage() {
+        return null;
     }
 
     @Override
